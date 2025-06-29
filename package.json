@@ -1,0 +1,27 @@
+{
+  "name": "react-component-library",
+  "version": "1.0.0",
+  "description": "A library of ready to use components for React",
+  "keywords": [
+    "react",
+    "component",
+    "library",
+    "ui",
+    "carousel"
+  ],
+  "homepage": "https://github.com/quantum-corn/react-component-library#readme",
+  "bugs": {
+    "url": "https://github.com/quantum-corn/react-component-library/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quantum-corn/react-component-library.git"
+  },
+  "license": "MIT",
+  "author": "quantum-corn",
+  "type": "module",
+  "main": "index.jsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
