@@ -1,4 +1,4 @@
-# React Component Library
+# Component Library React
 
 Just what the name suggests. A library of React components ready to use.
 
@@ -6,4 +6,4 @@ Just what the name suggests. A library of React components ready to use.
 
 ## List of components available
 
-- [x] Carousel
+- [X] Carousel
