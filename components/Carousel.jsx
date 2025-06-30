@@ -89,11 +89,11 @@ function Carousel({
       <img
         src={imgset[active].src}
         alt={imgset[active].alt}
-        className={name.concat("Image".concat(active))}
+        className={name.concat("Image")}
         id={name.concat("Image".concat(active))}
       />
       <button
-        className={name.concat("LeftButton")}
+        className={name.concat("Button")}
         id={name.concat("LeftButton")}
         onClick={() => {
           handleButtonClick("left");
@@ -109,7 +109,7 @@ function Carousel({
           return (
             <button
               className={name.concat("Marker")}
-              id={name.concat("Marker")}
+              id={name.concat("Marker").concat(index)}
               key={index}
               onClick={() => {
                 setActive(index);
@@ -121,7 +121,7 @@ function Carousel({
         })}
       </div>
       <button
-        className={name.concat("RightButton")}
+        className={name.concat("Button")}
         id={name.concat("RightButton")}
         onClick={() => {
           handleButtonClick("right");
