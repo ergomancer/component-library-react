@@ -25,13 +25,13 @@ Just what the name suggests. A library of React components ready to use. This pa
 
 I am an independent developer. Your support can help me work better.
 
-> ---
->
+---
+
 > - I am available to be hired full-time, part-time or freelance.
 > - [![buymeacoffee](<https://img.buymeacoffee.com/button-api/?text=Buy me a book&emoji=📖&slug=quantumcorn&button_colour=bf1d55&font_colour=ffffff&font_family=Comic&outline_colour=ffffff&coffee_colour=FFDD00>)](https://www.buymeacoffee.com/quantumcorn)
 > - [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R5R7O37GT)
->
-> ---
+
+---
 
 ## Documentation
 
@@ -71,7 +71,8 @@ This documentation lists the available components and their properties. To exami
 - `buttons` - Accepts an array of arrays. Each internal array contains 2 string values
 
   - `[0]` - The content of the button. It can be anything that can be directly rendered between opening and closing tags of [NavButton](#navbutton) - mainly strings or JSX literals.
-    > [!IMPORTANT] You need to pass the JSX literal i.e. `<Content />` instead of the functional component i.e. `Content` here.
+    > [!IMPORTANT]
+    > You need to pass the JSX literal i.e. `<Content />` instead of the functional component i.e. `Content` here.
   - `[1]` - Accepts a string corresponding to the target route.
 
 ### `SPAContainer`
@@ -82,6 +83,7 @@ This documentation lists the available components and their properties. To exami
 - `pages` - Accepts an array of arrays. Each internal array contains 3 string values
 
   - `[0]` - The content of the button. It can be anything that can be directly rendered between opening and closing tags of [NavButton](#navbutton) - mainly strings or JSX literals.
-    > [!IMPORTANT] You need to pass the JSX literal i.e. `<Content />` instead of the functional component i.e. `Content` here.
+    > [!IMPORTANT]
+    > You need to pass the JSX literal i.e. `<Content />` instead of the functional component i.e. `Content` here.
   - `[1]` - Accepts a string corresponding to the target route.
   - `[2]` - Accepts a JSX literal which is displayed as the contents of the route.
