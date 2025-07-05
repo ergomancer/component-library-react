@@ -72,7 +72,7 @@ This documentation lists the available components and their properties. To exami
 
   - `[0]` - The content of the button. It can be anything that can be directly rendered between opening and closing tags of [NavButton](#navbutton) - mainly strings or JSX literals.
 
-    > [!IMPORTANT]
+    > [!NOTE]
     > You need to pass the JSX literal i.e. `<Content />` instead of the functional component i.e. `Content` here.
 
   - `[1]` - Accepts a string corresponding to the target route.
