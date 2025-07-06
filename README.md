@@ -27,9 +27,8 @@ I am an independent developer. Your support can help me work better.
 
 ---
 
-> - I am available to be hired full-time, part-time or freelance.
-> - [![buymeacoffee](<https://img.buymeacoffee.com/button-api/?text=Buy me a book&emoji=📖&slug=quantumcorn&button_colour=bf1d55&font_colour=ffffff&font_family=Comic&outline_colour=ffffff&coffee_colour=FFDD00>)](https://www.buymeacoffee.com/quantumcorn)
-> - [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R5R7O37GT)
+> ![ALERT](./alert.svg) I am available to be hired full-time, part-time or freelance.
+> [![buymeacoffee](<https://img.buymeacoffee.com/button-api/?text=Buy me a book&emoji=📖&slug=quantumcorn&button_colour=bf1d55&font_colour=ffffff&font_family=Comic&outline_colour=ffffff&coffee_colour=FFDD00>)](https://www.buymeacoffee.com/quantumcorn) > [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R5R7O37GT)
 
 ---
 
@@ -39,16 +38,23 @@ This documentation lists the available components and their properties. To exami
 
 ### `Carousel`
 
-`<Carousel imgset={[src, alt]} />`
+```js
+<Carousel
+  cards={[
+    <div>
+      <p>Hello...</p>
+    </div>,
+    <div>
+      <p>World!</p>
+    </div>,
+  ]}
+/>
+```
 
-- `imgset` - **Required** - Accepts an array of objects, where each object is an image in the carousel. The objects have the following structure:
+- `cards` - Accepts an array of Components, where each Component is a card in the carousel.
 
-  ```js
-  {
-    src: "/path/to/image.extension",
-    alt: "The alt text for the image"
-  }
-  ```
+  > ![ALERT](./alert.svg)
+  > You need to pass Components here i.e. `Content` instead of the JSX literals i.e. `<Content />`.
 
 - `Buttons` - Accepts an object containing React components that return the content of the left and the right button in the following structure `{ left, right }`.
 
@@ -72,7 +78,7 @@ This documentation lists the available components and their properties. To exami
 
   - `[0]` - The content of the button. It can be anything that can be directly rendered between opening and closing tags of [NavButton](#navbutton) - mainly strings or JSX literals.
 
-    > ![NOTE](./alert.svg)
+    > ![ALERT](./alert.svg)
     > You need to pass the JSX literal i.e. `<Content />` instead of the functional component i.e. `Content` here.
 
   - `[1]` - Accepts a string corresponding to the target route.
@@ -86,7 +92,7 @@ This documentation lists the available components and their properties. To exami
 
   - `[0]` - The content of the button. It can be anything that can be directly rendered between opening and closing tags of [NavButton](#navbutton) - mainly strings or JSX literals.
 
-    > ![NOTE](./alert.svg)
+    > ![ALERT](./alert.svg)
     > You need to pass the JSX literal i.e. `<Content />` instead of the functional component i.e. `Content` here.
 
   - `[1]` - Accepts a string corresponding to the target route.

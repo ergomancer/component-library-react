@@ -6,7 +6,7 @@ export default function NavBar({ buttons = [["Home", "/"]], name = "navbar" }) {
       {buttons.map((button, index) => {
         return (
           <NavButton
-            className={name.concat("Button")}
+            className={name.concat(" button")}
             key={button[0]}
             id={name.concat("Button", button[0])}
             target={button[1]}

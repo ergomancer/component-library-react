@@ -60,7 +60,14 @@ const markersDefault = {
 };
 
 function Carousel({
-  imgset,
+  cards = [
+    <div>
+      <p>Hello...</p>
+    </div>,
+    <div>
+      <p>World!</p>
+    </div>,
+  ],
   Buttons = buttonsDefault,
   Markers = markersDefault,
   name = "carousel",
@@ -68,7 +75,7 @@ function Carousel({
   const [active, setActive] = useState(0);
 
   const handleButtonClick = function (side) {
-    let count = imgset.length;
+    let count = cards.length;
     let newActive;
     switch (side) {
       case "right": {
@@ -84,16 +91,16 @@ function Carousel({
     }
   };
 
+  let Card = cards[active];
+
   return (
     <div className={name} id={name}>
-      <img
-        src={imgset[active].src}
-        alt={imgset[active].alt}
-        className={name.concat("Image")}
-        id={name.concat("Image".concat(active))}
+      <Card
+        className={name.concat(" card")}
+        id={name.concat("Card".concat(active))}
       />
       <button
-        className={name.concat("Button")}
+        className={name.concat(" button")}
         id={name.concat("LeftButton")}
         onClick={() => {
           handleButtonClick("left");
@@ -101,14 +108,14 @@ function Carousel({
       >
         <Buttons.left />
       </button>
-      <div className={name.concat("Markerset")} id={name.concat("Markerset")}>
+      <div className={name.concat(" markerset")} id={name.concat("Markerset")}>
         {imgset.map((img, index) => {
           let Marker;
           if (index != active) Marker = Markers.inactive;
           else Marker = Markers.active;
           return (
             <button
-              className={name.concat("Marker")}
+              className={name.concat(" marker")}
               id={name.concat("Marker").concat(index)}
               key={index}
               onClick={() => {
@@ -121,7 +128,7 @@ function Carousel({
         })}
       </div>
       <button
-        className={name.concat("Button")}
+        className={name.concat(" button")}
         id={name.concat("RightButton")}
         onClick={() => {
           handleButtonClick("right");
