@@ -61,12 +61,20 @@ const markersDefault = {
 
 function Carousel({
   cards = [
-    <div>
-      <p>Hello...</p>
-    </div>,
-    <div>
-      <p>World!</p>
-    </div>,
+    () => {
+      return (
+        <div>
+          <p>Hello...</p>
+        </div>
+      );
+    },
+    () => {
+      return (
+        <div>
+          <p>World!</p>
+        </div>
+      );
+    },
   ],
   Buttons = buttonsDefault,
   Markers = markersDefault,
@@ -109,7 +117,7 @@ function Carousel({
         <Buttons.left />
       </button>
       <div className={name.concat(" markerset")} id={name.concat("Markerset")}>
-        {imgset.map((img, index) => {
+        {cards.map((img, index) => {
           let Marker;
           if (index != active) Marker = Markers.inactive;
           else Marker = Markers.active;

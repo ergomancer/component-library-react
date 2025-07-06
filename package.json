@@ -1,6 +1,6 @@
 {
   "name": "component-library-react",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A library of ready to use components for React",
   "keywords": [
     "react",
@@ -13,7 +13,8 @@
     "spacontainer",
     "library",
     "ui",
-    "carousel"
+    "carousel",
+    "checklist"
   ],
   "homepage": "https://github.com/quantum-corn/component-library-react#readme",
   "bugs": {

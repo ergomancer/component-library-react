@@ -10,6 +10,7 @@ Just what the name suggests. A library of React components ready to use. This pa
 - [x] [NavButton](#navbutton)
 - [x] [NavBar](#navbar)
 - [x] [SPAContainer](#spacontainer)
+- [x] [Checklist](#checklist)
 
 ## Usage
 
@@ -27,8 +28,11 @@ I am an independent developer. Your support can help me work better.
 
 ---
 
-> ![ALERT](./alert.svg) I am available to be hired full-time, part-time or freelance.
-> [![buymeacoffee](<https://img.buymeacoffee.com/button-api/?text=Buy me a book&emoji=📖&slug=quantumcorn&button_colour=bf1d55&font_colour=ffffff&font_family=Comic&outline_colour=ffffff&coffee_colour=FFDD00>)](https://www.buymeacoffee.com/quantumcorn) > [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R5R7O37GT)
+> ![ALERT](./alert.svg) **I am available to be hired full-time, part-time or freelance.**
+>
+> [![buymeacoffee](<https://img.buymeacoffee.com/button-api/?text=Buy me a book&emoji=📖&slug=quantumcorn&button_colour=bf1d55&font_colour=ffffff&font_family=Comic&outline_colour=ffffff&coffee_colour=FFDD00>)](https://www.buymeacoffee.com/quantumcorn)
+>
+> [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R5R7O37GT)
 
 ---
 
@@ -41,20 +45,27 @@ This documentation lists the available components and their properties. To exami
 ```js
 <Carousel
   cards={[
-    <div>
-      <p>Hello...</p>
-    </div>,
-    <div>
-      <p>World!</p>
-    </div>,
+    () => {
+      return (
+        <div>
+          <p>Hello...</p>
+        </div>
+      );
+    },
+    () => {
+      return (
+        <div>
+          <p>World!</p>
+        </div>
+      );
+    },
   ]}
 />
 ```
 
 - `cards` - Accepts an array of Components, where each Component is a card in the carousel.
 
-  > ![ALERT](./alert.svg)
-  > You need to pass Components here i.e. `Content` instead of the JSX literals i.e. `<Content />`.
+  > ![ALERT](./alert.svg) You need to **pass the Components** here i.e. `Content` instead of the JSX literals i.e. `<Content />`.
 
 - `Buttons` - Accepts an object containing React components that return the content of the left and the right button in the following structure `{ left, right }`.
 
@@ -68,6 +79,7 @@ This documentation lists the available components and their properties. To exami
 
 - `target` - Accepts a string for the target route.
 - Add children between opening and closing tags freely.
+  > ![ALERT](./alert.svg) `<NavButton>` is a functional empty container. Be sure provide the `children`.
 
 ### `NavBar`
 
@@ -78,8 +90,7 @@ This documentation lists the available components and their properties. To exami
 
   - `[0]` - The content of the button. It can be anything that can be directly rendered between opening and closing tags of [NavButton](#navbutton) - mainly strings or JSX literals.
 
-    > ![ALERT](./alert.svg)
-    > You need to pass the JSX literal i.e. `<Content />` instead of the functional component i.e. `Content` here.
+    > ![ALERT](./alert.svg) You need to **pass the JSX literal** i.e. `<Content />` instead of the functional component i.e. `Content` here.
 
   - `[1]` - Accepts a string corresponding to the target route.
 
@@ -92,8 +103,20 @@ This documentation lists the available components and their properties. To exami
 
   - `[0]` - The content of the button. It can be anything that can be directly rendered between opening and closing tags of [NavButton](#navbutton) - mainly strings or JSX literals.
 
-    > ![ALERT](./alert.svg)
-    > You need to pass the JSX literal i.e. `<Content />` instead of the functional component i.e. `Content` here.
+    > ![ALERT](./alert.svg) You need to **pass the JSX literal** i.e. `<Content />` instead of the functional component i.e. `Content` here.
 
   - `[1]` - Accepts a string corresponding to the target route.
   - `[2]` - Accepts a JSX literal which is displayed as the contents of the route.
+
+### `Checklist`
+
+`<Checklist name="checklist" cards={cardSet}/>`
+
+- `name` - Accepts a string, used to give `class` and `id` to various elements.
+  - `values` - Accepts an array (of strings, or other simple data types). Each of these items is assigned as the `value` of each checklist item, which is submitted when the form is submitted.
+- `cards` - Accepts an array of Components, where each Component is an item in the checklist. The order of `values` and ust be the same as that of these components.
+
+  > ![ALERT](./alert.svg) You need to **pass the Components** here i.e. `Content` instead of the JSX literals i.e. `<Content />`.
+  > - It is recommended to have a container element like `<div>` as the top-level element.
+  > - This component also needs to carry it's own check toggle logic.
+  > - The `<Checklist>` manages it as a form element.
