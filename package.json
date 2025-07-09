@@ -1,6 +1,6 @@
 {
   "name": "component-library-react",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "A library of ready to use components for React",
   "keywords": [
     "react",
@@ -27,11 +27,8 @@
   "license": "MIT",
   "author": "quantum-corn",
   "type": "module",
-  "main": "index.jsx",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "dependencies": {
-    "react-router-dom": "^7.6.3"
+    "react": "^19.1.0",
+    "react-router": "^7.6.3"
   }
 }
