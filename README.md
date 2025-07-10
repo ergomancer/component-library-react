@@ -36,6 +36,11 @@ I am an independent developer. Your support can help me work better.
 
 ---
 
+## CHANGELOG
+
+- v4.0.0- **All the versions before this have been deprecated because they are broken.**
+- v4.0.1- Add changelog to the README. Change the SPAContainer return layout and naming logic. Fix a non-fatal error in SPAContainer logic.
+
 ## Documentation
 
 This documentation lists the available components and their properties. To examine the DOM structure returned by the components, pleases use the browser DevTools until more thorough documentation is possible.
@@ -117,6 +122,7 @@ This documentation lists the available components and their properties. To exami
 - `cards` - Accepts an array of Components, where each Component is an item in the checklist. The order of `values` and ust be the same as that of these components.
 
   > ![ALERT](./alert.svg) You need to **pass the Components** here i.e. `Content` instead of the JSX literals i.e. `<Content />`.
+  >
   > - It is recommended to have a container element like `<div>` as the top-level element.
   > - This component also needs to carry it's own check toggle logic.
   > - The `<Checklist>` manages it as a form element.

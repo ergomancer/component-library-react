@@ -20,9 +20,9 @@ function routerSetup(pages, name) {
   let container = {};
   container.path = "/";
   container.element = (
-    <div>
-      <Outlet />
-      <NavBar name={name} buttons={buttons} />
+    <div id={name}>
+      <NavBar name={name.concat("NavBar")} buttons={buttons} />
+      <Outlet id={name.concat("Content")} />
     </div>
   );
   container.children = routes;
@@ -33,15 +33,7 @@ function routerSetup(pages, name) {
 }
 
 export default function SPAContainer({
-  pages = [
-    [
-      "Home",
-      "/",
-      () => {
-        return <p>Hello!</p>;
-      },
-    ],
-  ],
+  pages = [["Home", "/", <p>Hello!</p>]],
   name = "app",
 }) {
   const router = routerSetup(pages, name);
