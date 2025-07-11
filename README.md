@@ -11,6 +11,7 @@ Just what the name suggests. A library of React components ready to use. This pa
 - [x] [NavBar](#navbar)
 - [x] [SPAContainer](#spacontainer)
 - [x] [Checklist](#checklist)
+- [ ] Selector
 
 ## Usage
 
@@ -40,33 +41,19 @@ I am an independent developer. Your support can help me work better.
 
 - v4.0.0- **All the versions before this have been deprecated because they are broken.**
 - v4.0.1- Add changelog to the README. Change the SPAContainer return layout and naming logic. Fix a non-fatal error in SPAContainer logic.
+- v4.1.0 - Upgrade `Carousel` to add multiple display feature.
+- [ ] Upgrade `Carousel` to add infinite auto-scrolling.
+- [ ] Add Selector.
 
 ## Documentation
 
-This documentation lists the available components and their properties. To examine the DOM structure returned by the components, pleases use the browser DevTools until more thorough documentation is possible.
+This documentation lists the available components and their properties. To examine the DOM structure returned by the components, pleases use the browser DevTools the relevant information is added to the documentation.
 
 ### `Carousel`
 
-```js
-<Carousel
-  cards={[
-    () => {
-      return (
-        <div>
-          <p>Hello...</p>
-        </div>
-      );
-    },
-    () => {
-      return (
-        <div>
-          <p>World!</p>
-        </div>
-      );
-    },
-  ]}
-/>
-```
+#### API
+
+`<Carousel name="catalog" cards= [Item1, Item2, Item3, Item4] count={2}/>`
 
 - `cards` - Accepts an array of Components, where each Component is a card in the carousel.
 
@@ -78,13 +65,41 @@ This documentation lists the available components and their properties. To exami
 
 - `name` - Accepts a string. This is used to give `class` and `id` to various elements within the component.
 
+- `count` - Accepts a number. This in number of cards to display at a time.
+
+#### DOM
+
+```html
+<div id="{name}">
+  <button id="{name}LeftButton">
+    <Buttons.left />
+  </button>
+  <div id="{name}Main">
+    <div id="{name}Content">
+      <Card />
+      ...
+    </div>
+    <div id="{name}Markerset">
+      <button id="{name}Marker{index}"><Markers.active/inactive /></button>
+    </div>
+  </div>
+  <button id="{name}RightButton">
+    <Buttons.right />
+  </button>
+</div>
+```
+
 ### `NavButton`
 
 `<NavButton target="/">Home</ NavButton>`
 
 - `target` - Accepts a string for the target route.
 - Add children between opening and closing tags freely.
+
   > ![ALERT](./alert.svg) `<NavButton>` is a functional empty container. Be sure provide the `children`.
+
+- [ ] Optimize components
+- [ ] Add DOM structure to documentation.
 
 ### `NavBar`
 
@@ -98,6 +113,9 @@ This documentation lists the available components and their properties. To exami
     > ![ALERT](./alert.svg) You need to **pass the JSX literal** i.e. `<Content />` instead of the functional component i.e. `Content` here.
 
   - `[1]` - Accepts a string corresponding to the target route.
+
+- [ ] Optimize components
+- [ ] Add DOM structure to documentation.
 
 ### `SPAContainer`
 
@@ -113,6 +131,9 @@ This documentation lists the available components and their properties. To exami
   - `[1]` - Accepts a string corresponding to the target route.
   - `[2]` - Accepts a JSX literal which is displayed as the contents of the route.
 
+- [ ] Optimize components
+- [ ] Add DOM structure to documentation.
+
 ### `Checklist`
 
 `<Checklist name="checklist" cards={cardSet}/>`
@@ -126,3 +147,6 @@ This documentation lists the available components and their properties. To exami
   > - It is recommended to have a container element like `<div>` as the top-level element.
   > - This component also needs to carry it's own check toggle logic.
   > - The `<Checklist>` manages it as a form element.
+
+- [ ] Optimize components
+- [ ] Add DOM structure to documentation.
