@@ -11,6 +11,7 @@ Just what the name suggests. A library of React components ready to use. This pa
 - [x] [NavBar](#navbar)
 - [x] [SPAContainer](#spacontainer)
 - [x] [Checklist](#checklist)
+- [x] [Accordion](#accordion)
 - [ ] Selector
 
 ## Usage
@@ -42,6 +43,8 @@ I am an independent developer. Your support can help me work better.
 - v4.0.0- **All the versions before this have been deprecated because they are broken.**
 - v4.0.1- Add changelog to the README. Change the SPAContainer return layout and naming logic. Fix a non-fatal error in SPAContainer logic.
 - v4.1.0 - Upgrade `Carousel` to add multiple display feature.
+- v4.2.0 - Add `Accordion`.
+- [ ] Add animation support.
 - [ ] Upgrade `Carousel` to add infinite auto-scrolling.
 - [ ] Add Selector.
 
@@ -76,11 +79,14 @@ This documentation lists the available components and their properties. To exami
   </button>
   <div id="{name}Main">
     <div id="{name}Content">
-      <Card />
+      <Card key="{index}" />
       ...
     </div>
     <div id="{name}Markerset">
-      <button id="{name}Marker{index}"><Markers.active/inactive /></button>
+      <button id="{name}Marker{index}" key="{index}">
+        <Markers.active/inactive />
+      </button>
+      ...
     </div>
   </div>
   <button id="{name}RightButton">
@@ -150,3 +156,30 @@ This documentation lists the available components and their properties. To exami
 
 - [ ] Optimize components
 - [ ] Add DOM structure to documentation.
+
+### `Accordion`
+
+#### API
+
+`<Accordion name="faq" entries = [[Head1, Main1], [Head2, Main2]] />`
+
+- `entries` - Accepts an array of arrays each containing:
+
+  - `entries[][0]` - Head of the _accordion_ entry.
+  - `entries[][1]` - Main of the accordion entry.
+
+  > ![ALERT](./alert.svg) You need to **pass the Components** here i.e. `Content` instead of the JSX literals i.e. `<Content />`.
+
+- `name` - Accepts a string. This is used to give `class` and `id` to various elements within the component.
+
+#### DOM
+
+```html
+<div id="{name}">
+  <div id="{name}Item{index}" key="{index}">
+    <HeadSection />
+    <MainSection />
+  </div>
+  ...
+</div>
+```
