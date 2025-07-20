@@ -6,6 +6,7 @@ Just what the name suggests. A library of React components ready to use. This pa
 
 ## List of components available
 
+- [x] [Card](#card)
 - [x] [Carousel](#carousel)
 - [x] [NavButton](#navbutton)
 - [x] [NavBar](#navbar)
@@ -44,13 +45,30 @@ I am an independent developer. Your support can help me work better.
 - v4.0.1- Add changelog to the README. Change the SPAContainer return layout and naming logic. Fix a non-fatal error in SPAContainer logic.
 - v4.1.0 - Upgrade `Carousel` to add multiple display feature.
 - v4.2.0 - Add `Accordion`.
+- v4.3.0 - Add `Card`.
 - [ ] Add animation support.
 - [ ] Upgrade `Carousel` to add infinite auto-scrolling.
-- [ ] Add Selector.
+- [ ] Add `Selector`.
 
 ## Documentation
 
 This documentation lists the available components and their properties. To examine the DOM structure returned by the components, pleases use the browser DevTools the relevant information is added to the documentation.
+
+### `Card`
+
+#### API
+
+`<Card name="item" func={handleClick} style={cardStyle} />`
+
+- `name` - Accepts a string. This is used to give `id` to the returned DOM element.
+- `behavior` - Accepts a function. It is called with a `ref` to the returned element as the only parameter.
+- `style` - Accepts an object that is passed to the returned DOM element as the style attribute.
+
+#### DOM
+
+```html
+<div id="{name}">{children}</div>
+```
 
 ### `Carousel`
 
@@ -165,7 +183,7 @@ This documentation lists the available components and their properties. To exami
 
 - `entries` - Accepts an array of arrays each containing:
 
-  - `entries[][0]` - Head of the _accordion_ entry.
+  - `entries[][0]` - Head of the accordion entry.
   - `entries[][1]` - Main of the accordion entry.
 
   > ![ALERT](./alert.svg) You need to **pass the Components** here i.e. `Content` instead of the JSX literals i.e. `<Content />`.
